@@ -3,9 +3,11 @@ import { FaUsers } from "react-icons/fa";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { BiSolidBarChartSquare } from "react-icons/bi";
 import { MdCalendarMonth } from "react-icons/md";
-import { Divider } from "antd";
+import { RiArrowLeftRightFill } from "react-icons/ri";
+import { BiSolidChart } from "react-icons/bi";
 
 const Sidebar = () => {
+    
   const items = [
     {
       key: 1,
@@ -55,12 +57,14 @@ const Sidebar = () => {
             className="flex items-center gap-4 px-8 text-base font-medium text-primary"
             href="/"
           >
+            <RiArrowLeftRightFill />
             Transfer
           </a>
           <a
             className="flex items-center gap-4 px-8 text-base font-medium text-primary"
             href="/"
           >
+            <BiSolidChart />
             Youth academy
           </a>
         </div>
