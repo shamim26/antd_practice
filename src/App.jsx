@@ -1,157 +1,17 @@
-import { Button, Layout, Menu, Modal, Select, Table } from "antd";
-import "./App.css";
-import { Content, Header } from "antd/es/layout/layout";
-import Sider from "antd/es/layout/Sider";
-import { useState } from "react";
+import { Col, Row } from "antd";
+import Sidebar from "./components/Sidebar";
 
-function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
-
-  const columns = [
-    {
-      title: "Index",
-      dataIndex: "index",
-      key: "index",
-    },
-    {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
-    },
-    {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-    },
-    {
-      title: "Action",
-      dataIndex: "action",
-      key: "action",
-    },
-  ];
-
-  const data = [
-    {
-      key: "1",
-      index: "1",
-      name: "John",
-      age: "32",
-      action: (
-        <Select
-          style={{
-            width: 120,
-            margin: "auto",
-          }}
-          onChange={handleChange}
-          defaultValue="Choose"
-          options={[
-            { value: "remove", label: "Remove" },
-            { value: "add", label: "Add" },
-          ]}
-        />
-      ),
-    },
-    {
-      key: "2",
-      index: "1",
-      name: "John",
-      age: "32",
-      action: (
-        <Select
-          style={{
-            width: 120,
-            margin: "auto",
-          }}
-          onChange={handleChange}
-          defaultValue="Choose"
-          options={[
-            { value: "remove", label: "Remove" },
-            { value: "add", label: "Add" },
-          ]}
-        />
-      ),
-    },
-    {
-      key: "3",
-      index: "1",
-      name: "John",
-      age: "32",
-      action: (
-        <Select
-          style={{
-            width: 120,
-            margin: "auto",
-          }}
-          onChange={handleChange}
-          defaultValue="Choose"
-          options={[
-            { value: "remove", label: "Remove" },
-            { value: "add", label: "Add" },
-          ]}
-        />
-      ),
-    },
-  ];
-
+const App = () => {
   return (
-    <Layout className="layout">
-      <Header
-        style={{
-          backgroundColor: "gray",
-        }}
-      >
-        <h2>Top Navigation</h2>
-      </Header>
-      <Layout>
-        <Sider style={{ backgroundColor: "white" }} width={250}>
-          <Menu
-            mode="inline"
-            items={[
-              {
-                label: "Home",
-                key: "home",
-                children: [
-                  { label: "Profile", key: "profile" },
-                  { label: "User", key: "user" },
-                ],
-              },
-              {
-                label: "About",
-                key: "about",
-              },
-            ]}
-          />
-        </Sider>
-        <Content>
-          <Table
-            style={{ margin: "20px" }}
-            columns={columns}
-            dataSource={data}
-            pagination={false}
-          />
-          <div style={{ margin: "20px" }}>
-            <Button type="primary" onClick={() => setIsModalOpen(true)}>
-              Modal
-            </Button>
-            <Modal
-              onCancel={() => setIsModalOpen(false)}
-              onOk={() => setIsModalOpen(false)}
-              open={isModalOpen}
-              title="Modal"
-            >
-              <div>
-                <p>Modal from antd</p>
-              </div>
-            </Modal>
-          </div>
-        </Content>
-      </Layout>
-    </Layout>
+    <div className="h-screen font-sans bg-gradient-to-bl from-[rgba(172,178,216,1)] from-10% via-[rgba(222,235,236,1)] via-55% to-[rgba(173,207,210,1)] to-95% ">
+      <Row>
+        <Col span={4}>
+          <Sidebar />
+        </Col>
+        <Col span={20}></Col>
+      </Row>
+    </div>
   );
-}
+};
 
 export default App;
